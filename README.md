@@ -57,6 +57,7 @@ For this hackathon, you need to work with the **Portfolio** component located in
    http://localhost:5173/preview
    ```
    This route allows you to test your portfolio on various screen sizes.
+3. **Edge cases**: Edge case testing can include do not showing section when data is not present in data.js and UI remains smooth. 
 
 ---
 
