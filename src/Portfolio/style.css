@@ -1,0 +1,707 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Portfolio Container */
+.portfolio-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Navigation - Responsive Fixes */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark-mode .nav-menu {
+  background: rgba(18, 18, 18, 0.8) !important;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Hero Section - Responsive */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* Profile Image Container - Takes 50% width on desktop, 100% on mobile */
+.profile-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.profile-image-container:hover {
+  transform: scale(1.05);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 60px 0;
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  transform: translateX(-50%);
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  width: 100%;
+}
+
+.experience-dot {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid;
+  z-index: 2;
+}
+
+.experience-period {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.875rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+  font-weight: 500;
+}
+
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  margin-left: auto;
+}
+
+
+
+/* ============================================= */
+/* RESPONSIVE MEDIA QUERIES */
+/* ============================================= */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .portfolio-container {
+    padding: 0 16px;
+  }
+  
+  .hero-section {
+    padding: 100px 0 40px;
+    min-height: auto;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .hero-description {
+    text-align: center;
+    font-size: 0.95rem;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .profile-image-container {
+    width: 280px;
+    height: 280px;
+    margin: 2rem auto;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-container {
+    padding: 0 16px;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .about-section,
+  .skills-section,
+  .experience-section,
+  .projects-section {
+    padding: 40px 0;
+  }
+  
+  .skill-card {
+    padding: 1rem;
+    min-height: 110px;
+  }
+  
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+  
+  .experience-timeline::before {
+    left: 20px;
+  }
+  
+  .experience-item {
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .experience-dot {
+    left: 14px;
+  }
+  
+  .social-links {
+    gap: 0.8rem;
+  }
+  
+  .social-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+  
+  
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .profile-image-container {
+    width: 320px;
+    height: 320px;
+    margin: 2rem auto;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .portfolio-container {
+    padding: 0 24px;
+  }
+  
+  .skill-card {
+    padding: 1.25rem;
+  }
+  
+  .experience-item {
+    padding-left: 3rem;
+  }
+  
+  .experience-dot {
+    left: 22px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .profile-image-container {
+    width: 380px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  
+  .nav-links {
+    gap: 0.8rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  
+  .portfolio-container {
+    padding: 0 32px;
+  }
+  
+  .skill-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .portfolio-container {
+    max-width: 960px;
+    padding: 0 40px;
+  }
+  
+  .nav-container {
+    max-width: 960px;
+  }
+  
+  .profile-image-container {
+    max-width: 450px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .portfolio-container {
+    max-width: 1140px;
+    padding: 0 48px;
+  }
+  
+  .nav-container {
+    max-width: 1140px;
+  }
+  
+  .profile-image-container {
+    max-width: 500px;
+  }
+}
+
+/* Portrait mode specific adjustments */
+@media (orientation: portrait) {
+  .hero-section {
+    padding-top: 120px;
+  }
+  
+  .profile-image-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Landscape mode specific adjustments */
+@media (orientation: landscape) and (max-height: 600px) {
+  .hero-section {
+    min-height: auto;
+    padding: 100px 0 40px;
+  }
+  
+  .chatbot-container {
+    height: 380px;
+    max-height: 75vh;
+  }
+  
+  .profile-image-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-section {
+    background-size: cover;
+  }
+}
+
+/* Print styles */
+@media print {
+  .nav-menu,
+  .chatbot-toggle-btn,
+  .chatbot-container,
+  .chatbot-minimized,
+  .scroll-top-btn,
+  .social-links a:last-child {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+/* Safe area insets for modern mobile devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: min(0vmin, env(safe-area-inset-left));
+    padding-right: min(0vmin, env(safe-area-inset-right));
+    padding-top: min(0vmin, env(safe-area-inset-top));
+    padding-bottom: min(0vmin, env(safe-area-inset-bottom));
+  }
+  
+  .chatbot-toggle-btn {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .chatbot-container {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Grid system for responsiveness */
+.MuiGrid-container {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.MuiGrid-item {
+  padding: 16px !important;
+}
+
+/* Button responsiveness */
+.MuiButton-root {
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+/* Typography responsiveness */
+.MuiTypography-h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+}
+
+.MuiTypography-h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem) !important;
+}
+
+.MuiTypography-h5 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem) !important;
+}
+
+.MuiTypography-body1 {
+  font-size: clamp(1rem, 2vw, 1.1rem) !important;
+}
+
+/* Card responsiveness */
+.MuiCard-root {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiCardContent-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Experience timeline mobile fix */
+@media (max-width: 600px) {
+  .experience-timeline {
+    padding-left: 0;
+  }
+  
+  .experience-timeline::before {
+    left: 20px !important;
+  }
+  
+  .experience-item {
+    padding-left: 40px !important;
+  }
+  
+  .experience-dot {
+    left: 14px !important;
+  }
+}
+
+/* Fix for mobile menu drawer */
+.MuiDrawer-paper {
+  width: 280px !important;
+  max-width: 100vw !important;
+}
+
+/* Fix for mobile buttons spacing */
+@media (max-width: 480px) {
+  .MuiButton-root {
+    margin: 4px !important;
+    padding: 8px 16px !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .hero-section .MuiGrid-container {
+    flex-direction: column-reverse;
+  }
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for flexbox issues on iOS */
+.flex-fix {
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Glass effect compatibility */
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Fix for text overflow in chatbot */
+.chatbot-messages .MuiTypography-body2 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Profile Image takes 50% width on desktop */
+@media (min-width: 768px) {
+  .profile-image-container {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+  }
+  
+  .hero-section .MuiGrid-item:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Better spacing for sections */
+.section-spacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Better line heights for readability */
+p, .MuiTypography-body1, .MuiTypography-body2 {
+  line-height: 1.7 !important;
+}
+
+/* Better spacing between paragraphs */
+p + p {
+  margin-top: 1rem !important;
+}
+
+/* Consistent button spacing */
+.MuiButton-contained,
+.MuiButton-outlined,
+.MuiButton-text {
+  margin: 0.25rem !important;
+}
+
+/* Better form field spacing */
+.MuiTextField-root {
+  margin-bottom: 1rem !important;
+}
+
+/* Consistent card spacing */
+.MuiCardContent-root > *:not(:last-child) {
+  margin-bottom: 1rem !important;
+}

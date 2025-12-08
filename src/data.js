@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   "profileImage": "portfolio/profile.jpeg",
 
   "hero": {
@@ -20,6 +20,8 @@ const data = {
   "languages": [
     { "name": "HTML5", "img": "icons/html5.png" },
     { "name": "CSS3", "img": "icons/css3.png" },
+    { "name": "Python", "img": "icons/python.png" },
+    { "name": "Java", "img": "icons/java.png" },
     { "name": "JavaScript", "img": "icons/javascript.png" },
     { "name": "TypeScript", "img": "icons/typescript.png" },
     { "name": "React", "img": "icons/react.png" },
@@ -80,6 +82,12 @@ const data = {
 
   "projects": [
     {
+      "title": "WeatherNow - Weather Dashboard",
+      "image": "images/weather.jpeg",
+      "description": "Real-time weather application with forecasts, maps, and personalized weather alerts.",
+      "tech": ["React.js", "TypeScript", "OpenWeather API", "Mapbox", "Chart.js", "Material-UI", "PWA"]
+    },
+    {
       "title": "SmartShop - E-commerce Platform",
       "image": "/images/smartshop.jpg",
       "description": "A full-featured e-commerce platform with payment integration, inventory management, and admin dashboard.",
@@ -93,9 +101,9 @@ const data = {
     },
     {
       "title": "WeatherNow - Weather Dashboard",
-      "image": "portfolio/weather.jpeg",
+      "image": "/images/weather.jpeg",
       "description": "Real-time weather application with forecasts, maps, and personalized weather alerts.",
-      "skills": ["React.js", "TypeScript", "OpenWeather API", "Mapbox", "Chart.js", "Material-UI", "PWA"]
+      "tech": ["React.js", "TypeScript", "OpenWeather API", "Mapbox", "Chart.js", "Material-UI", "PWA"]
     }
   ]
 }
