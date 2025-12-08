@@ -342,128 +342,149 @@ function Portfolio() {
     </Drawer>
   );
 
-  const renderHero = () => (
-    <Box id="home" className={`hero-section ${darkMode ? 'dark-mode' : ''}`}>
-      <Container maxWidth="lg" className="portfolio-container" sx={{ py: { xs: 4, md: 8 } }}>
-        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center" direction={{ xs: 'column-reverse', md: 'row' }}>
-          <Grid item xs={12} md={6} className="fade-in" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-            <Typography
-              variant="h1"
-              className="hero-title"
-              gutterBottom
-              sx={{
-                fontSize: { xs: '2.2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
-                mb: { xs: 2, md: 3 }
-              }}
-            >
-              {data.hero.name}
+ const renderHero = () => (
+  <Box id="home" className={`hero-section ${darkMode ? 'dark-mode' : ''}`}>
+    <Container maxWidth="lg" className="portfolio-container" sx={{ py: { xs: 4, md: 8 } }}>
+      <Grid
+        container
+        spacing={{ xs: 4, md: 6 }}
+        alignItems="center"
+        direction={{ xs: 'column-reverse', md: 'row' }}
+      >
+        <Grid
+          item
+          xs={12}
+          md={6}
+          className="fade-in"
+          sx={{ textAlign: { xs: 'center', md: 'left' } }}
+        >
+          <Typography
+            variant="h1"
+            className="hero-title"
+            gutterBottom
+            sx={{
+              fontSize: { xs: '2.2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
+              mb: { xs: 2, md: 3 },
+            }}
+          >
+            {data.hero.name}
+          </Typography>
+
+          <Typography
+            variant="h4"
+            className="hero-subtitle"
+            color="primary"
+            gutterBottom
+            sx={{
+              fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.5rem', lg: '1.75rem' },
+              mb: { xs: 2, md: 3 },
+            }}
+          >
+            {data.hero.title}
+          </Typography>
+
+          <Box display="flex" alignItems="center" gap={1} mb={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
+            <LocationOn color="action" />
+            <Typography variant="body1" color="text.secondary">
+              {data.hero.location}
             </Typography>
-            <Typography
-              variant="h4"
-              className="hero-subtitle"
-              color="primary"
-              gutterBottom
+          </Box>
+
+          <Typography
+            variant="body1"
+            className="hero-description"
+            paragraph
+            sx={{
+              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+              mb: { xs: 3, md: 4 },
+            }}
+          >
+            {data.hero.description}
+          </Typography>
+
+          <Box display="flex" gap={2} mt={3} flexWrap="wrap" justifyContent={{ xs: 'center', md: 'flex-start' }}>
+            {/* Download CV Button */}
+            <Button
+              variant="contained"
+              size="small"
+              href={data.cvLink} // Replace with your CV link
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
-                fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.5rem', lg: '1.75rem' },
-                mb: { xs: 2, md: 3 }
+                backgroundColor: 'black',
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: 'white',
+                  color: 'black',
+                  border: '1px solid black',
+                },
+                fontSize: { xs: '0.75rem', md: '0.875rem' },
+                px: { xs: 2, md: 3 },
+                py: { xs: 0.5, md: 1 },
               }}
             >
-              {data.hero.title}
-            </Typography>
-            <Box display="flex" alignItems="center" gap={1} mb={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
-              <LocationOn color="action" />
-              <Typography variant="body1" color="text.secondary">
-                {data.hero.location}
-              </Typography>
-            </Box>
-            <Typography
-              variant="body1"
-              className="hero-description"
-              paragraph
+              Download CV
+            </Button>
+
+            {/* Ask AI Button */}
+            <Button
+              variant="text"
+              size="large"
+              startIcon={<SmartToy />}
+              onClick={toggleChatbot}
               sx={{
-                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
-                mb: { xs: 3, md: 4 }
+                ml: { xs: 0, sm: 1 },
+                width: { xs: '100%', sm: 'auto' },
+                fontSize: { xs: '0.875rem', md: '1rem' },
+                px: { xs: 3, md: 4 },
+                py: { xs: 1, md: 1.5 },
               }}
             >
-              {data.hero.description}
-            </Typography>
-            <Box display="flex" gap={2} mt={3} flexWrap="wrap" justifyContent={{ xs: 'center', md: 'flex-start' }}>
-              <Button
-                variant="contained"
-                size="large"
-                onClick={() => scrollToSection('projects')}
-                sx={{
-                  width: { xs: '100%', sm: 'auto' },
-                  fontSize: { xs: '0.875rem', md: '1rem' },
-                  px: { xs: 3, md: 4 },
-                  py: { xs: 1, md: 1.5 }
-                }}
-              >
-                View Projects
-              </Button>
-              <Button
-                variant="outlined"
-                size="large"
-                onClick={() => scrollToSection('experience')}
-                sx={{
-                  width: { xs: '100%', sm: 'auto' },
-                  fontSize: { xs: '0.875rem', md: '1rem' },
-                  px: { xs: 3, md: 4 },
-                  py: { xs: 1, md: 1.5 }
-                }}
-              >
-                My Experience
-              </Button>
-              <Button
-                variant="text"
-                size="large"
-                startIcon={<SmartToy />}
-                onClick={toggleChatbot}
-                sx={{
-                  ml: { xs: 0, sm: 1 },
-                  width: { xs: '100%', sm: 'auto' },
-                  fontSize: { xs: '0.875rem', md: '1rem' },
-                  px: { xs: 3, md: 4 },
-                  py: { xs: 1, md: 1.5 }
-                }}
-              >
-                Ask AI
-              </Button>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6} className="fade-in delay-1" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Box
-              className="profile-image-container"
-              sx={{
-                borderColor: 'primary.main',
-                width: '100%',
-                maxWidth: '500px',
-                height: 'auto',
-                aspectRatio: '1',
-                borderRadius: '50%',
-                overflow: 'hidden',
-                border: '4px solid',
-                mx: 'auto'
-              }}
-            >
-              <Box
-                component="img"
-                src={data.profileImage}
-                alt="Profile"
-                className="profile-image"
-                sx={{
-                  backgroundColor: darkMode ? '#333' : '#eee',
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
-                }}
-              />
-            </Box>
-          </Grid>
+              Ask AI
+            </Button>
+          </Box>
         </Grid>
-      </Container>
-    </Box>
-  );
+
+        <Grid
+          item
+          xs={12}
+          md={6}
+          className="fade-in delay-1"
+          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        >
+          <Box
+            className="profile-image-container"
+            sx={{
+              borderColor: 'primary.main',
+              width: '100%',
+              maxWidth: '500px',
+              height: 'auto',
+              aspectRatio: '1',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '4px solid',
+              mx: 'auto',
+            }}
+          >
+            <Box
+              component="img"
+              src={data.profileImage}
+              alt="Profile"
+              className="profile-image"
+              sx={{
+                backgroundColor: darkMode ? '#333' : '#eee',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
+  </Box>
+);
+
 
   const renderAbout = () => {
     const [expandedIndex, setExpandedIndex] = useState(null);
