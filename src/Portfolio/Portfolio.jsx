@@ -625,7 +625,9 @@ function Portfolio() {
                       position: 'relative',
                       zIndex: 1,
                       opacity: hoveredIndex !== null && hoveredIndex !== index ? 0.7 : 1,
-                      transition: 'opacity 0.3s ease'
+                      transition: 'opacity 0.3s ease',
+                          color: hoveredIndex === index ? "#000000" : (darkMode ? "#ffffff" : "#000000"), 
+
                     }}
                   >
                     {paragraph}
